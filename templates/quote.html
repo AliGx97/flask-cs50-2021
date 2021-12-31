@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    {% if message is defined %}
+        <main class="container p-5">
+
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus="" class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+
+        </main>
+    {% else %}
+        <main class="container p-5">
+
+    <p>
+        A share of {{ name }} ({{ symbol }}) costs {{ price }}.
+    </p>
+
+        </main>
+    {% endif %}
+{% endblock %}
